@@ -5,39 +5,39 @@
 //
 // The hotkey set
 //
-hotkeySet -source "Maya_Default" -current Maya_Default_Duplicate4;
+hotkeySet -source "Maya_Default" -current Maya_Default_Duplicate;
 //
 // The hotkey contexts and hotkeys
 //
-hotkey -keyShortcut "v" -alt -name ("PlaybackNormalNameCommand");
-hotkey -keyShortcut "v" -alt -sht -name ("Playback60SlowNameCommand");
-hotkey -keyShortcut "r" -alt -sht -name ("FrameSelectedTimelineNameCommand");
-hotkey -keyShortcut "w" -alt -sht -name ("PinTranslateNameCommand");
-hotkey -keyShortcut "0" -ctl -name ("GraphEditorNameCommand");
-hotkey -keyShortcut "/" -name ("TimeDraggerToolActivateNameCommand");
-hotkey -keyShortcut "/" -releaseName ("TimeDraggerToolDeactivateNameCommand");
-hotkey -keyShortcut "g" -alt -sht -name ("TrajectoryGuideNameCommand");
-hotkey -keyShortcut "h" -alt -sht -name ("SelectHierarchyNameCommand");
+hotkey -keyShortcut "m" -releaseName ("ModifyOpacityReleaseNameCommand");
 hotkey -keyShortcut "e" -alt -sht -name ("PinRotateNameCommand");
 hotkey -keyShortcut "m" -name ("ModifyOpacityPressNameCommand");
-hotkey -keyShortcut "m" -releaseName ("ModifyOpacityReleaseNameCommand");
+hotkey -keyShortcut "w" -alt -sht -name ("PinTranslateNameCommand");
+hotkey -keyShortcut "0" -ctl -name ("GraphEditorNameCommand");
 hotkey -keyShortcut "s" -alt -sht -name ("KeyRangeNameCommand");
-hotkeyCtx -type "Editor" -addClient "polyTexturePlacementPanel";
+hotkey -keyShortcut "v" -alt -sht -name ("Playback60SlowNameCommand");
+hotkey -keyShortcut "v" -alt -name ("PlaybackNormalNameCommand");
+hotkey -keyShortcut "/" -releaseName ("TimeDraggerToolDeactivateNameCommand");
+hotkey -keyShortcut "r" -alt -sht -name ("FrameSelectedTimelineNameCommand");
+hotkey -keyShortcut "/" -name ("TimeDraggerToolActivateNameCommand");
+hotkey -keyShortcut "h" -alt -sht -name ("SelectHierarchyNameCommand");
+hotkey -keyShortcut "g" -alt -sht -name ("TrajectoryGuideNameCommand");
 hotkeyCtx -type "Editor" -addClient "hyperGraphPanel";
-hotkeyCtx -type "Editor" -addClient "shapePanel";
 hotkeyCtx -type "Editor" -addClient "posePanel";
-hotkeyCtx -type "Editor" -addClient "graphEditor";
 hotkeyCtx -type "Editor" -addClient "profilerPanel";
+hotkeyCtx -type "Editor" -addClient "polyTexturePlacementPanel";
 hotkeyCtx -type "Editor" -addClient "nodeEditorPanel";
-hotkeyCtx -type "Editor" -addClient "outlinerPanel";
-hotkeyCtx -type "Editor" -addClient "hyperShadePanel";
+hotkeyCtx -type "Editor" -addClient "graphEditor";
 hotkeyCtx -type "Editor" -addClient "timeEditorPanel";
-hotkey -keyShortcut "/" -name ("TimeEditorToggleTimeCursorPressNameCommand");
 hotkey -keyShortcut "/" -releaseName ("TimeEditorToggleTimeCursorReleaseNameCommand");
-hotkeyCtx -type "Tool" -addClient "SymmetrizeUVBrush";
-hotkeyCtx -type "Tool" -addClient "Unfold3DBrush";
+hotkey -keyShortcut "/" -name ("TimeEditorToggleTimeCursorPressNameCommand");
+hotkeyCtx -type "Editor" -addClient "hyperShadePanel";
+hotkeyCtx -type "Editor" -addClient "outlinerPanel";
+hotkeyCtx -type "Editor" -addClient "shapePanel";
 hotkeyCtx -type "Tool" -addClient "texCutContext";
-hotkeyCtx -type "Tool" -addClient "polyCutUV";
 hotkeyCtx -type "Tool" -addClient "texSculptCacheContext";
-hotkeyCtx -type "Tool" -addClient "xgmIGBrush";
+hotkeyCtx -type "Tool" -addClient "SymmetrizeUVBrush";
 hotkeyCtx -type "Tool" -addClient "sculptMeshCache";
+hotkeyCtx -type "Tool" -addClient "Unfold3DBrush";
+hotkeyCtx -type "Tool" -addClient "polyCutUV";
+hotkeyCtx -type "Tool" -addClient "xgmIGBrush";

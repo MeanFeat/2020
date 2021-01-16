@@ -375,43 +375,26 @@
     ],
     "closedControls": [
         {
-            "objectName": "bifrostGraphEditorControl",
-            "posX": 1920,
-            "posY": 23,
-            "controlHeight": 1053,
-            "controlWidth": 1916,
-            "widthProperty": "free",
-            "heightProperty": "free"
-        },
-        {
-            "objectName": "UVToolkitDockControl",
-            "posX": 230,
-            "posY": 105,
-            "controlHeight": 898,
-            "controlWidth": 285,
+            "objectName": "ToolSettings",
+            "posX": 116,
+            "posY": 166,
+            "controlHeight": 758,
+            "controlWidth": 460,
             "widthProperty": "preferred",
             "heightProperty": "free"
         },
         {
-            "objectName": "contentBrowserPanel1Window",
-            "posX": 283,
-            "posY": 44,
-            "controlHeight": 933,
-            "controlWidth": 1430,
+            "objectName": "hyperGraphPanel1Window",
+            "posX": 1920,
+            "posY": 23,
+            "controlHeight": 1053,
+            "controlWidth": 1916,
             "widthProperty": "free",
-            "heightProperty": "free"
+            "heightProperty": "free",
+            "maximized": 1
         },
         {
-            "objectName": "timeEditorPanel1Window",
-            "posX": 200,
-            "posY": 250,
-            "controlHeight": 400,
-            "controlWidth": 1400,
-            "widthProperty": "free",
-            "heightProperty": "free"
-        },
-        {
-            "objectName": "componentEditorPanel1Window",
+            "objectName": "nodeEditorPanel1Window",
             "posX": 1920,
             "posY": 23,
             "controlHeight": 1053,
@@ -420,14 +403,13 @@
             "heightProperty": "free"
         },
         {
-            "objectName": "outlinerPanel2Window",
-            "posX": 0,
-            "posY": 23,
-            "controlHeight": 1023,
-            "controlWidth": 1916,
+            "objectName": "shapePanel1Window",
+            "posX": 200,
+            "posY": 250,
+            "controlHeight": 400,
+            "controlWidth": 660,
             "widthProperty": "free",
-            "heightProperty": "free",
-            "maximized": 1
+            "heightProperty": "free"
         },
         {
             "objectName": "renderViewWindow",
@@ -435,15 +417,6 @@
             "posY": 44,
             "controlHeight": 1057,
             "controlWidth": 1236,
-            "widthProperty": "free",
-            "heightProperty": "free"
-        },
-        {
-            "objectName": "hyperShadePanel1Window",
-            "posX": 354,
-            "posY": 142,
-            "controlHeight": 721,
-            "controlWidth": 1374,
             "widthProperty": "free",
             "heightProperty": "free"
         },
@@ -457,6 +430,15 @@
             "heightProperty": "free"
         },
         {
+            "objectName": "componentEditorPanel1Window",
+            "posX": 1920,
+            "posY": 23,
+            "controlHeight": 1053,
+            "controlWidth": 1916,
+            "widthProperty": "free",
+            "heightProperty": "free"
+        },
+        {
             "objectName": "relationshipPanel1Window",
             "posX": 130,
             "posY": 31,
@@ -466,12 +448,21 @@
             "heightProperty": "free"
         },
         {
-            "objectName": "nodeEditorPanel1Window",
-            "posX": 1920,
-            "posY": 23,
-            "controlHeight": 1053,
-            "controlWidth": 1916,
+            "objectName": "timeEditorPanel1Window",
+            "posX": 200,
+            "posY": 250,
+            "controlHeight": 400,
+            "controlWidth": 1400,
             "widthProperty": "free",
+            "heightProperty": "free"
+        },
+        {
+            "objectName": "UVToolkitDockControl",
+            "posX": 230,
+            "posY": 105,
+            "controlHeight": 898,
+            "controlWidth": 285,
+            "widthProperty": "preferred",
             "heightProperty": "free"
         },
         {
@@ -484,34 +475,6 @@
             "heightProperty": "free"
         },
         {
-            "objectName": "createNodePanel2Window",
-            "posX": 250,
-            "posY": 200,
-            "controlHeight": 446,
-            "controlWidth": 396,
-            "widthProperty": "free",
-            "heightProperty": "free"
-        },
-        {
-            "objectName": "ToolSettings",
-            "posX": 116,
-            "posY": 166,
-            "controlHeight": 758,
-            "controlWidth": 460,
-            "widthProperty": "preferred",
-            "heightProperty": "free"
-        },
-        {
-            "objectName": "profilerPanel1Window",
-            "posX": 0,
-            "posY": 23,
-            "controlHeight": 1023,
-            "controlWidth": 1916,
-            "widthProperty": "free",
-            "heightProperty": "free",
-            "maximized": 1
-        },
-        {
             "objectName": "ArnoldViewportRendererOptions",
             "posX": 250,
             "posY": 200,
@@ -521,10 +484,19 @@
             "heightProperty": "free"
         },
         {
-            "objectName": "hyperGraphPanel1Window",
-            "posX": 1920,
+            "objectName": "bifrostBrowserControl",
+            "posX": 250,
+            "posY": 200,
+            "controlHeight": 600,
+            "controlWidth": 1024,
+            "widthProperty": "free",
+            "heightProperty": "free"
+        },
+        {
+            "objectName": "outlinerPanel2Window",
+            "posX": 0,
             "posY": 23,
-            "controlHeight": 1053,
+            "controlHeight": 1023,
             "controlWidth": 1916,
             "widthProperty": "free",
             "heightProperty": "free",
@@ -540,20 +512,20 @@
             "heightProperty": "free"
         },
         {
-            "objectName": "shapePanel1Window",
-            "posX": 200,
-            "posY": 250,
-            "controlHeight": 400,
-            "controlWidth": 660,
+            "objectName": "createNodePanel2Window",
+            "posX": 250,
+            "posY": 200,
+            "controlHeight": 446,
+            "controlWidth": 396,
             "widthProperty": "free",
             "heightProperty": "free"
         },
         {
-            "objectName": "posePanel1Window",
-            "posX": -1920,
-            "posY": 23,
-            "controlHeight": 1053,
-            "controlWidth": 1916,
+            "objectName": "hyperShadePanel1Window",
+            "posX": 354,
+            "posY": 142,
+            "controlHeight": 721,
+            "controlWidth": 1374,
             "widthProperty": "free",
             "heightProperty": "free"
         },
@@ -567,6 +539,33 @@
             "heightProperty": "free"
         },
         {
+            "objectName": "contentBrowserPanel1Window",
+            "posX": 283,
+            "posY": 44,
+            "controlHeight": 933,
+            "controlWidth": 1430,
+            "widthProperty": "free",
+            "heightProperty": "free"
+        },
+        {
+            "objectName": "bifrostGraphEditorControl",
+            "posX": 1920,
+            "posY": 23,
+            "controlHeight": 1053,
+            "controlWidth": 1916,
+            "widthProperty": "free",
+            "heightProperty": "free"
+        },
+        {
+            "objectName": "posePanel1Window",
+            "posX": -1920,
+            "posY": 23,
+            "controlHeight": 1053,
+            "controlWidth": 1916,
+            "widthProperty": "free",
+            "heightProperty": "free"
+        },
+        {
             "objectName": "clipEditorPanel1Window",
             "posX": 1094,
             "posY": 195,
@@ -576,13 +575,14 @@
             "heightProperty": "free"
         },
         {
-            "objectName": "bifrostBrowserControl",
-            "posX": 250,
-            "posY": 200,
-            "controlHeight": 600,
-            "controlWidth": 1024,
+            "objectName": "profilerPanel1Window",
+            "posX": 0,
+            "posY": 23,
+            "controlHeight": 1023,
+            "controlWidth": 1916,
             "widthProperty": "free",
-            "heightProperty": "free"
+            "heightProperty": "free",
+            "maximized": 1
         }
     ],
     "contentBrowserContexts": [
