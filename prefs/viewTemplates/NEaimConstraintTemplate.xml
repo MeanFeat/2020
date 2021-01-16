@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<templates>
+	<using package='maya'/>
+	<template name='NEaimConstraint'>
+		<attribute name='boundingBox' type='maya.TdataCompound'>
+			<label>Bounding Box</label>
+		</attribute>
+		<attribute name='constraintRotate' type='maya.double3'>
+			<label>Constraint Rotate</label>
+		</attribute>
+		<attribute name='constraintVector' type='maya.double3'>
+			<label>Constraint Vector</label>
+		</attribute>
+		<attribute name='inverseMatrix' type='maya.matrix'>
+			<label>Inverse Matrix</label>
+		</attribute>
+		<attribute name='matrix' type='maya.matrix'>
+			<label>Matrix</label>
+		</attribute>
+		<attribute name='objectColorRGB' type='maya.float3'>
+			<label>Object Color RGB</label>
+		</attribute>
+		<attribute name='offset' type='maya.double3'>
+			<label>Offset</label>
+		</attribute>
+		<attribute name='parentInverseMatrix' type='maya.matrix'>
+			<label>Parent Inverse Matrix</label>
+		</attribute>
+		<attribute name='parentMatrix' type='maya.matrix'>
+			<label>Parent Matrix</label>
+		</attribute>
+		<attribute name='rotate' type='maya.double3'>
+			<label>Rotate</label>
+		</attribute>
+		<attribute name='scale' type='maya.double3'>
+			<label>Scale</label>
+		</attribute>
+		<attribute name='selectHandle' type='maya.double3'>
+			<label>Select Handle</label>
+		</attribute>
+		<attribute name='transMinusRotatePivot' type='maya.double3'>
+			<label>Trans Minus Rotate Pivot</label>
+		</attribute>
+		<attribute name='translate' type='maya.double3'>
+			<label>Translate</label>
+		</attribute>
+		<attribute name='visibility' type='maya.bool'>
+			<label>Visibility</label>
+		</attribute>
+		<attribute name='worldInverseMatrix' type='maya.matrix'>
+			<label>World Inverse Matrix</label>
+		</attribute>
+		<attribute name='worldMatrix' type='maya.matrix'>
+			<label>World Matrix</label>
+		</attribute>
+		<attribute name='xformMatrix' type='maya.matrix'>
+			<label>Xform Matrix</label>
+		</attribute>
+		<attribute name='target' type='maya.TdataCompound'>
+			<label>Target</label>
+		</attribute>
+	</template>
+	<view name='NEDefault' template='NEaimConstraint'>
+		<property name='boundingBox'/>
+		<property name='constraintRotate'/>
+		<property name='constraintVector'/>
+		<property name='inverseMatrix'/>
+		<property name='matrix'/>
+		<property name='objectColorRGB'/>
+		<property name='offset'/>
+		<property name='parentInverseMatrix'/>
+		<property name='parentMatrix'/>
+		<property name='rotate'/>
+		<property name='scale'/>
+		<property name='selectHandle'/>
+		<property name='transMinusRotatePivot'/>
+		<property name='translate'/>
+		<property name='visibility'/>
+		<property name='worldInverseMatrix'/>
+		<property name='worldMatrix'/>
+		<property name='xformMatrix'/>
+		<property name='target'/>
+	</view>
+</templates>

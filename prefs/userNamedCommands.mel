@@ -1,0 +1,136 @@
+//Maya Preference 2020 (Release 1)
+//
+//
+
+nameCommand
+	-annotation "FindAndReplaceInLayerNameNameCommand"
+	-sourceType "mel"
+	-command ("FindAndReplaceInLayerName")
+	FindAndReplaceInLayerNameNameCommand;
+
+nameCommand
+	-annotation "PinRotateNameCommand"
+	-sourceType "mel"
+	-command ("PinRotate")
+	PinRotateNameCommand;
+
+nameCommand
+	-annotation "PinTranslateNameCommand"
+	-sourceType "mel"
+	-command ("PinTranslate")
+	PinTranslateNameCommand;
+
+nameCommand
+	-annotation "TimeDraggerToolActivateNameCommand"
+	-sourceType "mel"
+	-command ("TimeDraggerToolActivate")
+	TimeDraggerToolActivateNameCommand;
+
+nameCommand
+	-annotation "TimeDraggerToolDeactivateNameCommand"
+	-sourceType "mel"
+	-command ("TimeDraggerToolDeactivate")
+	TimeDraggerToolDeactivateNameCommand;
+
+nameCommand
+	-annotation "CollapsLayersNameCommand"
+	-sourceType "mel"
+	-command ("CollapseLayers")
+	CollapsLayersNameCommand;
+
+nameCommand
+	-annotation "ExpandLayersNameCommand"
+	-sourceType "mel"
+	-command ("ExpandLayers")
+	ExpandLayersNameCommand;
+
+nameCommand
+	-annotation "TrajectoryGuideNameCommand"
+	-sourceType "mel"
+	-command ("TrajectoryGuide")
+	TrajectoryGuideNameCommand;
+
+nameCommand
+	-annotation "CollapseLayersNameCommand"
+	-sourceType "mel"
+	-command ("CollapseLayers")
+	CollapseLayersNameCommand;
+
+nameCommand
+	-annotation "PreInfinityCycleNameCommand"
+	-sourceType "mel"
+	-command ("PreInfinityCycle")
+	PreInfinityCycleNameCommand;
+
+nameCommand
+	-annotation "PostInfinityCycleNameCommand"
+	-sourceType "mel"
+	-command ("PostInfinityCycle")
+	PostInfinityCycleNameCommand;
+
+nameCommand
+	-annotation "PlaybackNormalNameCommand"
+	-sourceType "mel"
+	-command ("PlaybackNormal")
+	PlaybackNormalNameCommand;
+
+nameCommand
+	-annotation "Playback60SlowNameCommand"
+	-sourceType "mel"
+	-command ("Playback60Slow")
+	Playback60SlowNameCommand;
+
+nameCommand
+	-annotation "Playback60NameCommand"
+	-sourceType "mel"
+	-command ("Playback60")
+	Playback60NameCommand;
+
+nameCommand
+	-annotation "SwitchToolNameCommand"
+	-sourceType "mel"
+	-command ("SwitchTool")
+	SwitchToolNameCommand;
+
+nameCommand
+	-annotation "SelectLayerObjectsNameCommand"
+	-sourceType "mel"
+	-command ("SelectLayerObjects")
+	SelectLayerObjectsNameCommand;
+
+nameCommand
+	-annotation "SelectHierarchyNameCommand"
+	-sourceType "mel"
+	-command ("SelectHierarchy")
+	SelectHierarchyNameCommand;
+
+nameCommand
+	-annotation "GraphEditorNameCommand"
+	-sourceType "mel"
+	-command ("GraphEditor")
+	GraphEditorNameCommand;
+
+nameCommand
+	-annotation "FrameSelectedTimelineNameCommand"
+	-sourceType "mel"
+	-command ("FrameSelectedTimeline")
+	FrameSelectedTimelineNameCommand;
+
+nameCommand
+	-annotation "KeyRangeNameCommand"
+	-sourceType "mel"
+	-command ("KeyRange")
+	KeyRangeNameCommand;
+
+nameCommand
+	-annotation "ModifyOpacityPressNameCommand"
+	-sourceType "mel"
+	-command ("ModifyOpacityPress")
+	ModifyOpacityPressNameCommand;
+
+nameCommand
+	-annotation "ModifyOpacityReleaseNameCommand"
+	-sourceType "mel"
+	-command ("ModifyOpacityRelease")
+	ModifyOpacityReleaseNameCommand;
+

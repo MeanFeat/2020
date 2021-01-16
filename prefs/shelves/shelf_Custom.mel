@@ -1,0 +1,726 @@
+global proc shelf_Custom () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 1
+        -flexibleWidthValue 32
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Sublime Supports" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "OpenPortsToSublime" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "connectField.png" 
+        -image1 "connectField.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\n# Close ports if they were already open under another configuration\ntry: cmds.commandPort(name=\":7001\", close=True)\nexcept: cmds.warning('Could not close port 7001 (maybe it is not opened yet...)')\ntry: cmds.commandPort(name=\":7002\", close=True)\nexcept: cmds.warning('Could not close port 7002 (maybe it is not opened yet...)')\n\n# Open new ports\ncmds.commandPort(name=\":7001\", sourceType=\"mel\")\ncmds.commandPort(name=\":7002\", sourceType=\"python\")" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 1
+        -flexibleWidthValue 32
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User Script" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "MatchRig" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "rigidBind.png" 
+        -image1 "rigidBind.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import MatchRig\nreload(MatchRig)\nfrom MatchRig import *\nDoMatch()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 1
+        -flexibleWidthValue 32
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "User Script" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "SnapJoints" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "addSkinInfluence.png" 
+        -image1 "addSkinInfluence.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import SnapJoints \nreload(SnapJoints)\nfrom SnapJoints import * \nsnap_joints()\n" 
+        -sourceType "python" 
+        -doubleClickCommand "import SnapJoints \nreload(SnapJoints)\nfrom SnapJoints import * \nclear_constraints()" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 1
+        -flexibleWidthValue 26
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "KillAllScriptJobs" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "KillAllScriptJobs" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "removeRenderable.png" 
+        -image1 "removeRenderable.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\ncmds.scriptJob(killAll=True)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 1
+        -flexibleWidthValue 32
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "CreateScriptJob" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "CreateScriptJob" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "addPoint2.png" 
+        -image1 "addPoint2.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import LayerUpdater\nreload(LayerUpdater)\nfrom LayerUpdater import *\nCreateScriptJob()\n" 
+        -sourceType "python" 
+        -doubleClickCommand "cmds.scriptNode( st=1, bs='from LayerUpdater import *', stp='python', n='LayerUpdaterScript0')\ncmds.scriptNode( st=1, bs='CreateScriptJob()', stp='python', n='LayerUpdaterScript0')\n" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 1
+        -flexibleWidthValue 32
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "layer" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "LayerFrame" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "layerEditor.png" 
+        -image1 "layerEditor.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import LayerExporter\nreload(LayerExporter)\nfrom LayerExporter import ExportSelectedLayers\nExportSelectedLayers()" 
+        -sourceType "python" 
+        -doubleClickCommand "import LayerExporter\nreload(LayerExporter)\nfrom LayerExporter import ExportAll\nExportAll()" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 1
+        -flexibleWidthValue 32
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Ghost" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Ghost" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "ghostOff.png" 
+        -image1 "ghostOff.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "/* This file downloaded from Highend3d.com\n''  \n''  Highend3d.com File Information:\n''  \n''    Script Name: GhostMan\n''    Author: kas4f2 \n''    Last Updated: Nov 13, 2008\n''    Update/Change this file at:\n''    http://Highend3d.com/maya/downloads/mel_scripts/animation/2563.html\n''  \n''  Please do not alter any information above this line\n''  it is generated dynamically by Highend3d.com and will\n''  be changed automatically on any updates.\n*/\n// Global Variables\nglobal string $gmChar[], $whichPanel;\nglobal int $gmHeirarchy, $gmKeyframes, $gmSpecTick, $gmLOD, $gmVisible, $gmHideCurves, $mayaVers;\n\n//Defaults\n$mayaVers = (int) startString(`about -v`,1);\n$gmSpecTick = 0;\n$gmHeirarchy = 1;\n$gmKeyframes = 1;\n$gmLOD = 3;\n$gmVisible = 1;\n$gmHideCurves = 1;\n$whichPanel = `getPanel -withFocus`;\nshadingNode -name \"GhostTransp\" -asShader lambert -shared;\n\n\n//Initializes the UI\nproc gmInitUI() {\n\tstring $orig[] = `ls -selection`;\n\n\tglobal int $gmHeirarchy, $gmLOD, $mayaVers;\n\t\n\t// OS check -- this will probably go away once the UI is built using forms\n\tif (`about -mac`) {\n\t\t$gmButtonRowPad = 10;\n\t} else {\n\t\t$gmButtonRowPad = 1;\n\t}\n\n\tif (`window -q -ex GhostManWin`) deleteUI GhostManWin ;\n\n\t// Make Window\n\twindow -w 300 -h 5 -mnb 1 -mxb 0 -menuBar 1 -mbv 1 -rtf 1 -s 1 -t \"GhostMan - 1.0\" -in \"GhostMan\" GhostManWin;\n\n\t\t//Menu Layout\n\t\tmenu -l \"Options\" gmOptions;\n\t\t\tmenuItem -l \"Ghost Heirarchy\" -cb 1 -c \"$gmHeirarchy = 1 - $gmHeirarchy\" gmMIHeirarchy;\n\t\t\tmenuItem -l \"Only on Keyframes\" -cb 1 -c \"$gmKeyframes\t= 1 - $gmKeyframes\" gmMIKeyFrames;\n\t\t\t/*if ($mayaVers > 6) {\n\t\t\t\tmenuItem -l \"Special Tick Color\" -cb 0 -c \"$gmSpecTick = 1-$gmSpecTick\" gmMISpecialTickColor;\n\t\t\t}*/\n\t\t\tmenuItem -l \"Hide Curves\" -cb 1 -c \"$gmHideCurves = 1 - $gmHideCurves\" gmMIHideCurves;\n\t\t\tmenuItem -d true;\n\t\t\tmenuItem -l \"Level of Detail\" -sm 1 gmMILeveOfDetail;\n\t\t\t\tradioMenuItemCollection;\n\t\t\t\tmenuItem -l \"1\" -rb 0 -c \"gmChangeDetail(1); $gmLOD = 1;\" gmMILOD1;\n\t\t\t\tmenuItem -l \"2\" -rb 0 -c \"gmChangeDetail(2); $gmLOD = 2;\" gmMILOD2;\n\t\t\t\tmenuItem -l \"3\" -rb 1 -c \"gmChangeDetail(3); $gmLOD = 3;\" gmMILOD3;\n\t\t//Form Layout\n\t\tcolumnLayout -adj 1 -cat \"both\" 0 gmMainGroupCL;\n\t    \trowLayout -nc 3 -cw 1 80 -cw 2 100 gmFirstRow;\n\t\t\t\tbutton -label \" Set Character \" -width 80 -command \"gmSetCharacter\" gmBtnSetCharacter;\n\t\t\t\ttext -label \"           (No Ghosting Object Set)\" gmTxtCharacter;\n\t\t\tsetParent ..;\n\t\t\trowLayout -nc 4 -cw 1 90 -cw 2 80 -cw 3 90 gmSecondRow;\n\t\t\t\tbutton -label \" Ghost Character \" -width 90\t-command \"gmGhostCharacter\"\tgmBtnGhostCharacter;\n\t\t\t\tbutton -label \" Delete Ghosts \"\t-width 80 -command \"gmDeleteGhosts\" gmBtnDeleteGhosts;\n\t\t\t\tbutton -label \" Toggle Visibility \"\t-width 90 -command \"gmToggleVis\"\tgmBtnToggleVisibility;\t\n\t\t\tsetParent ..;\n\t\t\trowLayout -nc 3 -cw 1 120 -cw 2 120 gmThirdRow;\n\t\t\t\tbutton -label \" Refresh Current Ghost \" -width 120 -command \"gmRefreshCurrent\" gmBtnRefreshCurrent;\n\t\t\t\tbutton -label \" Delete Current Ghost \" -width 120 -command \"gmDeleteCurrent\" gmBtnDeleteCurrent;\n\t\t\tsetParent ..;\n\t\t\trowColumnLayout -numberOfRows 8;\n\t\t\t\tattrColorSliderGrp -l \"  Ghost Transparency\" -sb 0 -at GhostTransp.transparency;\n\t\t\tsetParent ..;\n\t\t\t/*rowLayout -nc 4 -cw 1 100 -cw 2 30 -cw 3 30 -cw 4 30 gmFourthRow;\n\t\t\t\ttext -l \"  Use Frame Range \" gmTxtFrameRange;\n\t\t\t\tcheckBox -l \"\" -rs 1 gmChbxFrame;\n\t\t\t\ttext -l \"From\" -al \"right\" gmTxtFromText;\n\t\t\t\ttext -l \"To\" -al \"right\" gmTxtToText;\n\t\t\tsetParent ..;*/\n\t\tsetParent ..;\n\t\t\t\n\t\t\t\t\n\tselect -cl;\n\t\n\tshowWindow GhostManWin ;\n\n\tscriptJob -p GhostManWin -e \"SceneOpened\" \"deleteUI GhostManWin; gmInitUI;\";\n\tscriptJob -p GhostManWin -e \"NewSceneOpened\" \"deleteUI GhostManWin;\";\n//\tscriptJob -p GhostManWin -e \"timeChanged\" \"gmFrameChange;\";\n\n}\n\n\nproc gmFrameChange(){\n\t//old, don't use\n\tglobal string $gmChar[];\n\t\n\tif ($gmChar[0] != \"\") {\n//\t\thide gmGhostGroup;\t\n\n\t\tint $now = `currentTime - query`;\n\t\tint $i = $now + 10;\n\t\tstring $temp[];\n\t\t\n\t\t//hide gmGhostGroup;\n\t\t\n\t\twhile ($i != $now - 10){\n\t\t\tstring $sel;\n\t\t\tstring $a = \"gmFrame_\";\n\t\t\tstring $c = $a + $i;\n\t\t\t$temp = `ls $c`;\n\t\t\t\n\t\t\tif (size($temp) != 0) {\n\t\t\t\tfor ($sel in $temp) {\n\t\t\t\t\tshowHidden $sel;\n\t\t\t\t\tprint $sel;\n\t\t\t\t}\n\t\t\t}\n\t\t\t$i--;\n\t\t}\n\t}\n}\n\n\n//Lowers resolution on ghost group for performance reasons\nproc gmChangeDetail(int $res) {\n\t\n\tif (`objExists gmGhostGroup`) {\n\t\tselect -r gmGhostGroup ;\n\t\t\t\n\t\tif ($res == 1) {\n\t\t\tdisplaySmoothness \n\t\t\t\t-divisionsU 0 \n\t\t\t\t-divisionsV 0 \n\t\t\t\t-pointsWire 4 \n\t\t\t\t-pointsShaded 1 \n\t\t\t\t-polygonObject 1;\n\t\t\tsubdivDisplaySmoothness -smoothness $res;\n\t\t}\n\t\tif ($res == 2) {\n\t\t\tdisplaySmoothness \n\t\t\t\t-divisionsU 1 \n\t\t\t\t-divisionsV 1 \n\t\t\t\t-pointsWire 8 \n\t\t\t\t-pointsShaded 2 \n\t\t\t\t-polygonObject 2;\n\t\t\tsubdivDisplaySmoothness -smoothness $res;\n\t\t}\n\t\tif ($res == 3) {\n\t\t\tdisplaySmoothness \n\t\t\t\t-divisionsU 3 \n\t\t\t\t-divisionsV 3 \n\t\t\t\t-pointsWire 16 \n\t\t\t\t-pointsShaded 4 \n\t\t\t\t-polygonObject 3;\n\t\t\tsubdivDisplaySmoothness -smoothness $res;\n\t\t}\n\t\tselect -cl;\n\t}\n}\n\n\n//Hides NurbsCurves in Ghost Group \nproc gmHideCurves()\n{\n\tglobal int $gmHideCurves;\n\t\n\tif ($gmHideCurves == 1) {\n\t\tselect -r -hi gmGhostGroup;\n\t\t\n\t\tstring $temp[];\n\t\tstring $sel;\n\t\t$temp = `ls -sl -typ nurbsCurve`;\n\t\tselect -cl;\n\t\tfor ($sel in $temp)\n\t\t{\n\t\t\thide $sel;\n\t\t}\n\t}\n}\n\n\n//deletes and recreates ghost on current frame\nproc gmRefreshCurrent(){\n\tgmDeleteCurrent();\n\tgmGhostCharacter();\n}\n\n\n//deletes ghost on the current frame or keyframe\nproc gmDeleteCurrent(){\n\tglobal int $gmKeyframes;\n\tint $now = `currentTime -query`;\n\t\n\t//if keyframes is checked\n\tif ($gmKeyframes == 1) {\n\t\tint $i;\n\t\t$i = `findKeyframe -timeSlider -which previous`;\n\t\t\n\t\tcurrentTime -edit $i;\n\t\tif (`findKeyframe -timeSlider -which next` == $now){\n\t\t\tcurrentTime -edit $now;\n\t\t}\t\n\t}\n\t\n\n\tstring $time = `currentTime -query`;\n\tstring $name = \"gmFrame_\" + $time;\n\t\n\t\n\tcurrentTime -edit $now;\n\t\n\tif (`objExists $name`){\n\t\tdelete $name;\n\t} else {\n\t\tif ($gmKeyframes == 1) {\n\t\t\terror (\"No Object \" + $name + \". No Ghost Exists on Current Keyframe\");\n\t\t} else {\n\t\t\terror (\"No Object \" + $name + \". No Ghost Exists on Current Frame\");\n\t\t}\n\t}\n}\n\n\n//Deletes all ghosts\nproc gmDeleteGhosts(){\n\tif (`objExists gmGhostGroup`) {   \n\t\tdelete gmGhostGroup;\n\t}\n}\n\n\n//Sets character\nproc gmSetCharacter(){\n\n\tglobal int $gmHeirarchy;\n\tglobal string $gmChar[];\n\t\n\tgmDeleteGhosts();\n\t\n\t//capture original selection and time\n\tstring $orig[] = `ls -selection`;\n\tint $now = `currentTime -query`;\n\t\n\tif ($orig[0] == \"\") {\n\t\terror (\"No Object Selected\");\n\t}\n\t\n\t//if heirarchy is checked\n\tif ($gmHeirarchy == 1) {\n\t\t//pickwalk up until top node is reached\n\t\tselect -hi;\n\t\t\n\t\t$temp = `ls -sl`;\n\t\tpickWalk -d up;\n\t\t$temp2 = `ls -sl`;\n\t\t\n\t\twhile ($temp[0] != $temp2[0]){\n\t\t\t$temp = `ls -sl`;\n\t\t\tpickWalk -d up;\n\t\t\t$temp2 = `ls -sl`;\n\t\t}\n\t}\n\t$gmChar = `ls -sl`;\n\t\n\t//Error when nothing selected\n\tif ( size($gmChar) == 0 ) error \"No geometry selected!\";\n\n\t//Edit UI label\n\t$label = \"           (\" + $gmChar[0] + \")\";\n\ttext -edit -label $label gmTxtCharacter;\n\t\n\t// Restore the original selection and time. \n\tselect -replace $orig;\n\tcurrentTime -edit $now;\n\n}\n\n\n//Hides/Shows gmGhostGroup\nproc gmToggleVis(){\n\tglobal int $gmVisible;\n\tstring $orig[] = `ls -selection`;\n\t\n\tselect -r gmGhostGroup ; \n\t\n\tif ($gmVisible == 1) {\n\t\thide `ls -sl`;\n\t} else {\n\t\tshowHidden -a;\n\t}\n\t\n\t$gmVisible = 1 - $gmVisible;\n\tselect -replace $orig;\n}\n\n\n//Ghosts every frame with a keyframe on it\nglobal proc gmGhostCharacter(){\n\n\tglobal string $gmChar[];\n\tglobal int $gmLOD, $gmKeyframes;\n\t\n\t//capture original selection and time\n\tstring $orig[] = `ls -selection`;\n\tint $now = `currentTime -query`;\n\t\n\t//declare ghost group if it doesn't exist\n    if (! `objExists gmGhostGroup`) \n    {\n\t\tgroup -name gmGhostGroup -empty;\n      \tsetAttr \"gmGhostGroup.overrideEnabled\" 1;         \n    }\n\n\t\n\t//only ghosts on a keyframes if checked\n\tif ($gmKeyframes == 1) {\n\t\tint $i;\n\t\t$i = `findKeyframe -timeSlider -which previous`;\n\t\t\n\t\tcurrentTime -edit $i;\n\t\tif (`findKeyframe -timeSlider -which next` == $now){\n\t\t\tcurrentTime -edit $now;\n\t\t}\t\n\t}\n\t\n\tselect $gmChar;\n\t\n\tstring $time = `currentTime -query`;\n\tstring $name = \"gmFrame_\" + $time;\n\tif (! `objExists $name`){\t\n\t\tgmGhost($gmChar);\n\t}\n\t\t\n\t\tgmHideCurves();\n\t\n\t\tgmChangeDetail($gmLOD);\n\t\n\t\n\t\n   \t// Restore the original selection and time. \n\tselect -replace $orig;\n\tcurrentTime -edit $now;\n}\n\n\n// Main proc to ghost the selected object on the current frame\nproc gmGhost(string $object[]){\n\t\n\tselect $object[0];\n\n\t//labels a \n\tstring $a = \"gmFrame_\";\n\tint $time = `currentTime -query`;\n\tstring $c = $a + $time;\n\n   \tshowHidden -a;\n\t//duplicate object\n    duplicate -rc;\n\t//group it to itself\n\tgroup -name $c;\n\t//parent it to the main group\n\tparent $c gmGhostGroup;\n\t\n\t// Assign existing shader to selected.\n\tif ( catch (`shadingNode -name \"GhostTransp\" -asShader lambert -shared`) ) ;\n\tsets  -name GhostTranspSG -renderable yes -noSurfaceShader yes -empty;\n\n\tselect $object[0];\n\t\n   \t// Add the selected geometry to the shading group. \n\tsets  -edit  -forceElement GhostTranspSG gmGhostGroup;\n\tselect -deselect;\n\tif ( catch (`connectAttr GhostTransp.outColor GhostTranspSG.surfaceShader`) ) ;\n\t\n}\n\ngmInitUI;\n" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 1
+        -flexibleWidthValue 32
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "tween" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Tween" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "insertKeySmall.png" 
+        -image1 "insertKeySmall.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import abzTweenMachine\nabzTweenMachine.abzTweenMachineWindow()\nreload(abzTweenMachine)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 1
+        -flexibleWidthValue 32
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import LayerTools\nreload(LayerTools)\nfrom LayerTools import PlayblastSelected\nPlayblastSelected()" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Playblast Layers" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "playblast.png" 
+        -image1 "playblast.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import LayerTools\nreload(LayerTools)\nfrom LayerTools import PlayblastSelected\nPlayblastSelected()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 1
+        -flexibleWidthValue 32
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import LayerTools\nreload(LayerTools)\nfrom LayerTools import PlayLayers\nPlayLayers()" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "PlayLayers" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "play_S.png" 
+        -image1 "play_S.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import LayerTools\nreload(LayerTools)\nfrom LayerTools import PlayLayers\nPlayLayers()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 1
+        -flexibleWidthValue 32
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "from MirrorTools import *\nMirrorAll()" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "from MirrorTools import *\nMirrorAll()" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "mirrorSkinWeight.png" 
+        -image1 "mirrorSkinWeight.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from MirrorTools import *\nMirrorAll()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 1
+        -flexibleWidthValue 32
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as cmds\n\ndef LinearToArc(radius):\n\tdiameter = radius*2\n\torigframe = cmds.currentTime(q=True)\n\tselection = cmds.ls( selection=True)\n\tif (len(selection) == 0):\n\t\tcmds.warning(\"Select the object with the travel distance\")\n\t\treturn\n\ttZ = \"%s.translateZ\"%selection[0]\n\ttX = \"%s.translateX\"%selection[0]\n\tstartZ = cmds.getAttr(tZ, t=0)\n\tendZ = cmds.getAttr(tZ, t=30)\n\tcmds.cutKey( selection[0] , clear=True)\n\tnewX = cmds.getAttr(tX) \n\tnewX += (diameter / 2.0)\n\tif ( startZ != endZ):\t\t\t\n\t\tpivot = cmds.spaceLocator( name=\"TurnPivot\")\n\t\tpivotName = pivot[0]\t\n\t\tdistance = endZ - startZ\n\t\tpi = 3.142857142857143\n\t\tcircumf = diameter * pi\n\t\tdegrees = (distance/circumf) * 360\n\t\tcmds.setAttr(tZ, 0)\t\n\t\tcmds.setAttr(tX, newX)\n\t\tcmds.parentConstraint(pivot, selection[0], mo=True)\n\t\tcmds.setKeyframe(pivot, t=0)\n\t\tcmds.currentTime(30)\n\t\t#animate the arc\n\t\trY = \"%s.rotateZ\"%pivotName\n\t\tcmds.setAttr(rY, -degrees)\n\t\tcmds.setKeyframe(pivot, t=30)\n\t\tcmds.currentTime(origframe)\n\t\t#set the curve to linear\n\t\trotCurve = \"%s_rotateZ\"%pivotName\n\t\tcmds.selectKey(rotCurve, r=True )\n\t\tcmds.keyTangent( itt=\"linear\", ott=\"linear\" )\n\t\tcmds.setInfinity( poi=\"cycleRelative\")\n\t\tcmds.bakeResults( selection[0],  t=(0,30))\n\tif ( startZ == endZ):\n\t\tcmds.warning(\"The object is not traveling\")\n\nresult = cmds.promptDialog(\ntitle='Set Diameter of Arc',\nmessage='Diameter:',\nbutton=['OK', 'Cancel'],\ndefaultButton='OK',\ncancelButton='Cancel',\ndismissString='Cancel')\n\nif result == 'OK':\n\tinputTxt = cmds.promptDialog(query=True, text=True)\n\tLinearToArc(float(inputTxt))\n\n\n" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import maya.cmds as cmds\n\ndef LinearToArc(radius):\n\tdiameter = r..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "arcLengthDimension.svg" 
+        -image1 "arcLengthDimension.svg" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import LinearToArc\nreload(LinearToArc)\nfrom LinearToArc import *\nLinearToArcCmd()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 1
+        -flexibleWidthValue 32
+        -enable 1
+        -width 34
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import LayerTools\nSortLayersAlphabetically()" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import LayerTools\nSortLayersAlphabetically()" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "sortName.png" 
+        -image1 "sortName.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import LayerTools as lt\nlt.SortLayersAlphabetically()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as cmds\n\nif cmds.pluginInfo(\"ARCMaya_Spring.mll\", q=True, loaded=True):\n    cmds.select('*:GrpTendrilSpringMaster', replace=True, hi=True)\n    sel = cmds.ls(selection=True)\n    cmds.cutKey(sel, option='keys')\n    cmds.currentTime(cmds.playbackOptions(animationStartTime=True))\n    cmds.arcSpring(strength=0.15,drift=0.3,historyDepth=5, \n    ms=0.25,md=0.5,mh=5,ss=2,g=10,tb=-10)\nelse:\n    cmds.loadPlugin(\"D:/Gamedev/Archiact/archiact-maya/x64/Release/ARCMaya_Spring.mll\")" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import maya.cmds as cmds\n\nif cmds.pluginInfo(\"ARCMaya_Spring.mll..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "bezTangentSelect.png" 
+        -image1 "bezTangentSelect.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nif cmds.pluginInfo(\"ARCMaya_Spring.mll\", q=True, loaded=True):\n    cmds.select('*:GrpTendrilSpringMaster', replace=True, hi=True)\n    sel = cmds.ls(selection=True)\n    cmds.cutKey(sel, option='keys')\n    cmds.currentTime(cmds.playbackOptions(animationStartTime=True))\n    cmds.arcSpring(strength=0.15,drift=0.3,historyDepth=5, \n    ms=0.25,md=0.5,mh=5,ss=2,g=10,tb=-10)\nelse:\n    cmds.loadPlugin(\"D:/Gamedev/Archiact/archiact-maya/x64/Release/ARCMaya_Spring.mll\")" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.mel as mel\nimport maya.cmds as cmds\nimport string\n\nkeywords = ['Enemies','Guardians','NPC','Player']           # Shared folder names from source and import\n\ndef SelectExportJoints():\n    cmds.select('*:ExportJoints', replace=True, hi=True)\n\ndef GetExportSettings( path, fileName):\n    mel.eval('FBXExportBakeComplexAnimation -v 1;')\n    start = cmds.playbackOptions(q=1, min=1)\n    end = cmds.playbackOptions(q=1, max=1)\n    mel.eval(\"FBXExportBakeComplexStart -v \" + str(start)) \n    mel.eval(\"FBXExportBakeComplexEnd -v \" + str(end))\n    return 'FBXExport -f \"' + path + fileName + '.fbx\" -s;'\n\ndef BuildFileName(splitPath):\n    fileNameFull = splitPath[-1].split('_')\n    fileNameFull[0] = \"ANIM\"                              \n    fileName = ''\n    for e in range(len(fileNameFull)):\n        fileName += fileNameFull[e]\n        if e < len(fileNameFull)-1:\n            fileName += \"_\"\n    return fileName\n\ndef GetFilePath():\n    splitPath = cmds.file(query = True, expandName=True)    # Get the full path file name\n    splitPath = splitPath.split('/')                        \n    fileName = BuildFileName(splitPath)                     # Replace SK_ with ANIM_\n    splitPath.pop()                                         # Remove file name so only path remains\n    path = '';\n    for item in splitPath:                                  # Set to Export Path\n        if item == 'Content':\n            path += 'Content/Import/Animations/'\n            break;\n        path += item + \"/\"\n    for item in splitPath:                                  # Add key folder\n        for key in keywords:\n            if item == key:\n                path += key + '/'\n                break;\n    return path, fileName\n\norigSelection = cmds.ls(selection=True)\nSelectExportJoints()\npath, fileName = GetFilePath()\nmel.eval( GetExportSettings( path, fileName ))\ncmds.select(origSelection)  \n" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import maya.mel as mel\nimport maya.cmds as cmds\nimport string\n\nk..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "exportCache.png" 
+        -image1 "exportCache.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.mel as mel\nimport maya.cmds as cmds\nimport string\n\nkeywords = ['Enemies','Guardians','NPC','Player']           # Shared folder names from source and import\n\ndef SelectExportJoints():\n    cmds.select('*:ExportJoints', replace=True, hi=True)\n\ndef GetExportSettings( path, fileName):\n    mel.eval('FBXExportBakeComplexAnimation -v 1;')\n    start = cmds.playbackOptions(q=1, min=1)\n    end = cmds.playbackOptions(q=1, max=1)\n    mel.eval(\"FBXExportBakeComplexStart -v \" + str(start)) \n    mel.eval(\"FBXExportBakeComplexEnd -v \" + str(end))\n    return 'FBXExport -f \"' + path + fileName + '.fbx\" -s;'\n\ndef BuildFileName(splitPath):\n    fileNameFull = splitPath[-1].split('_')\n    fileNameFull[0] = \"ANIM\"                              \n    fileName = ''\n    for e in range(len(fileNameFull)):\n        fileName += fileNameFull[e]\n        if e < len(fileNameFull)-1:\n            fileName += \"_\"\n    return fileName\n\ndef GetFilePath():\n    splitPath = cmds.file(query = True, expandName=True)    # Get the full path file name\n    splitPath = splitPath.split('/')                        \n    fileName = BuildFileName(splitPath)                     # Replace SK_ with ANIM_\n    splitPath.pop()                                         # Remove file name so only path remains\n    path = '';\n    for item in splitPath:                                  # Set to Export Path\n        if item == 'Content':\n            path += 'Content/Import/Animations/'\n            break;\n        path += item + \"/\"\n    for item in splitPath:                                  # Add key folder\n        for key in keywords:\n            if item == key:\n                path += key + '/'\n                break;\n    return path, fileName\n\norigSelection = cmds.ls(selection=True)\nSelectExportJoints()\npath, fileName = GetFilePath()\nmel.eval( GetExportSettings( path, fileName ))\ncmds.select(origSelection)  \n" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "source \"d:/GameDev/Archiact/md5toMaya_019b.mel\";\nmd5import;" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "source \"d:/GameDev/Archiact/md5toMaya_019b.mel\";\nmd5import;" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "importSmoothSkin.png" 
+        -image1 "importSmoothSkin.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\nimport maya.mel as mel\nimport md5mirror as md5\nimport pymel.core as pm\n\nmel.eval('source \"d:/GameDev/Archiact/md5toMaya_019b.mel\";')\ncmds.file(new=True, force=True)\nmel.eval('md5ImportAnimSkeleton()')\nmd5.mirror_root()\n\ncmds.select(\"*origin\", replace = True, hierarchy = True)\norigin = cmds.ls(selection=True)\nroot = cmds.listRelatives(origin, parent=True)\n\nfor item in pm.selected():\n    item.rename(item.name().replace(root[0], 'ref'))\n\ncmds.select(cl=True)" 
+        -sourceType "python" 
+        -doubleClickCommand "import maya.mel as mel\nmel.eval('source \"d:/GameDev/Archiact/md5toMaya_019b.mel\"; md5import;')" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Mirror MD5" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "from md5mirror import *\nmirror_md5mesh()" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "mirrorSkinWeight.png" 
+        -image1 "mirrorSkinWeight.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import md5mirror\nreload(md5mirror)\nfrom md5mirror import *\nmirror_md5mesh()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Bind Reference" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Bind Reference" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "bind.png" 
+        -image1 "bind.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import md5mirror as md5\nmd5.bind_reference()\n\n" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Set file paths PANIC" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Set Texture Paths Panic" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "fileNew.png" 
+        -image1 "fileNew.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\nfiles = cmds.ls(type=\"file\")\nfor f in files:\n    path = cmds.getAttr(f+\".fileTextureName\")\n    splitPath = path.split(\"/\")\n    found = False\n    for s in splitPath:\n        if s == \"doom3\":\n            found = True\n            path = \"%PANIC_BASE_PATH%\"\n        if found:\n            path +=\"/\"+s\n    cmds.setAttr(f+\".fileTextureName\", path, type=\"string\")\n    print path" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Export MD5Anim" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Export MD5Anim" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "exportSmoothSkin.png" 
+        -image1 "exportSmoothSkin.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\nimport pymel.core as pmc\nmax = 9999999\ncmds.playbackOptions(animationEndTime=max)\ncmds.select(\"*:ref*\")\nkeyframes = pmc.keyframe(q=True, time=(0, max))\nend = keyframes[-1] + 1\ncmds.playbackOptions(animationEndTime=end,maxTime=end)\n\ncmds.Export()\n\ncmds.select(clear=True)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "md5anim_mass_export" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import md5anim_mass_export\nreload(md5anim_mass_export)\nfrom md5a..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "layerEditor.png" 
+        -image1 "layerEditor.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import md5anim_mass_export\nreload(md5anim_mass_export)\nfrom md5anim_mass_export import *\nmd5anim_mass_export_main()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+
+} 

@@ -1,0 +1,173 @@
+//Maya Preference 2020 (Release 1)
+//
+//
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("from LayerTools import *\nLayerRenameWindow()")
+	FindAndReplaceInLayerName;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import maya.cmds as cmds\nimport PinTools as pt\npt.PinTranslate(cmds.ls(selection=True))")
+	PinTranslate;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import maya.cmds as cmds\nimport PinTools as pt\npt.PinRotate(cmds.ls(selection=True))")
+	PinRotate;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("from LayerTools import ExpandSelectedLayers\nExpandSelectedLayers()")
+	ExpandLayers;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("from LayerTools import CollapseSelectedLayers\nCollapseSelectedLayers()")
+	CollapseLayers;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import TrajectoryGuide\ntg_menu()")
+	TrajectoryGuide;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("togglePlayback;\n//playbackOptions -playbackSpeed 1;\n//currentUnit -time ntsc;")
+	PlaybackNormal;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("togglePlayback;\nplaybackOptions -playbackSpeed 0.5;\ncurrentUnit -time ntscf;")
+	Playback60Slow;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("togglePlayback;\nplaybackOptions -playbackSpeed 1;\ncurrentUnit -time ntscf;")
+	Playback60;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $ctx = `currentCtx`;\nif(`contextInfo -c $ctx` == \"manipMove\"){\n    RotateTool;\n} else {\n    MoveTool;\n}")
+	SwitchTool;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import LayerTools as lt\nlt.SelectLayerObjects()")
+	SelectLayerObjects;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("from UserCommands import FrameSelectedTimeline\nFrameSelectedTimeline()")
+	FrameSelectedTimeline;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("from UserCommands import KeyRange\nKeyRange()")
+	KeyRange;
+
