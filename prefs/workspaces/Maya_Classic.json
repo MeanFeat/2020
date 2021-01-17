@@ -4,41 +4,6 @@
     "selectedShelf": "Custom",
     "panels": [
         {
-            "mainWindowPanel": false,
-            "posX": 1920,
-            "posY": 23,
-            "splitter": {
-                "orientation": "horizontal",
-                "children": [
-                    {
-                        "tabWidget": {
-                            "selectedIndex": 0,
-                            "controlWidth": 1916,
-                            "controlHeight": 1053,
-                            "collapsed": false,
-                            "controls": [
-                                {
-                                    "objectName": "graphEditor1Window",
-                                    "title": "Graph Editor",
-                                    "uiScript": "if(!`panel -q -exists graphEditor1`) {\n\tint $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tstring $panelName = \"graphEditor1\";\n\tscriptedPanel -unParent  -type \"graphEditor\" -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  graphEditor1;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showPlayRangeShades \"on\" \n                -lockPlayRangeShades \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -valueLinesToggle 0\n                -outliner \"graphEditor1OutlineEd\" \n                -highlightAffectedCurves 0\n                $editorName;\n} else {\n\tscriptedPanel -e -unParent graphEditor1;\n}\nscriptedPanel -e -parent graphEditor1Window graphEditor1;\n",
-                                    "retain": false,
-                                    "deleteLater": true,
-                                    "loadImmediately": false,
-                                    "checkPlugins": false,
-                                    "tabDirection": 0,
-                                    "closed": false,
-                                    "widthProperty": "free",
-                                    "heightProperty": "free",
-                                    "controlWidth": 1916,
-                                    "controlHeight": 1053
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
             "mainWindowPanel": true,
             "splitter": {
                 "orientation": "vertical",
@@ -126,7 +91,7 @@
                                 {
                                     "tabWidget": {
                                         "selectedIndex": 1,
-                                        "controlWidth": 575,
+                                        "controlWidth": 733,
                                         "controlHeight": 743,
                                         "collapsed": false,
                                         "controls": [
@@ -142,10 +107,10 @@
                                                 "closed": false,
                                                 "widthProperty": "preferred",
                                                 "heightProperty": "free",
-                                                "controlWidth": 402,
+                                                "controlWidth": 398,
                                                 "controlHeight": 743,
                                                 "initCallback": "outlinerStateCallback",
-                                                "stateString": "outlinerEditor -e -docTag \"isolOutln_fromSeln\" -showShapes 0 -showAssignedMaterials 0 -showTimeEditor 0 -showReferenceNodes 0 -showReferenceMembers 0 -showAttributes 0 -showConnected 0 -showAnimCurvesOnly 0 -showMuteInfo 0 -organizeByLayer 1 -organizeByClip 1 -showAnimLayerWeight 1 -autoExpandLayers 1 -autoExpand 0 -showDagOnly 0 -showAssets 1 -showContainedOnly 1 -showPublishedAsConnected 0 -showParentContainers 0 -showContainerContents 1 -ignoreDagHierarchy 0 -expandConnections 0 -showUpstreamCurves 1 -showUnitlessCurves 1 -showCompounds 1 -showLeafs 1 -showNumericAttrsOnly 0 -highlightActive 1 -autoSelectNewObjects 0 -doNotSelectNewObjects 0 -dropIsParent 1 -transmitFilters 0 -setFilter \"defaultSetFilter\" -showSetMembers 0 -allowMultiSelection 1 -alwaysToggleSelect 0 -directSelect 0 -isSet 0 -isSetMember 0 -displayMode \"DAG\" -expandObjects 0 -setsIgnoreFilters 1 -containersIgnoreFilters 0 -editAttrName 0 -showAttrValues 0 -highlightSecondary 0 -showUVAttrsOnly 0 -showTextureNodesOnly 0 -attrAlphaOrder \"default\" -animLayerFilterOptions \"allAffecting\" -sortOrder \"none\" -longNames 0 -niceNames 1 -showNamespace 1 -showPinIcons 0 -mapMotionTrails 0 -ignoreHiddenAttribute 0 -ignoreOutlinerColor 0 -renderFilterVisible 0 -renderFilterIndex 0 -selectionOrder \"chronological\" -expandAttribute 0 $editorName"
+                                                "stateString": "outlinerEditor -e -docTag \"isolOutln_fromSeln\" -showShapes 0 -showAssignedMaterials 0 -showTimeEditor 1 -showReferenceNodes 0 -showReferenceMembers 0 -showAttributes 0 -showConnected 0 -showAnimCurvesOnly 0 -showMuteInfo 0 -organizeByLayer 1 -organizeByClip 1 -showAnimLayerWeight 1 -autoExpandLayers 1 -autoExpand 0 -showDagOnly 0 -showAssets 1 -showContainedOnly 1 -showPublishedAsConnected 0 -showParentContainers 0 -showContainerContents 1 -ignoreDagHierarchy 0 -expandConnections 0 -showUpstreamCurves 1 -showUnitlessCurves 1 -showCompounds 1 -showLeafs 1 -showNumericAttrsOnly 0 -highlightActive 1 -autoSelectNewObjects 0 -doNotSelectNewObjects 0 -dropIsParent 1 -transmitFilters 0 -setFilter \"defaultSetFilter\" -showSetMembers 1 -allowMultiSelection 1 -alwaysToggleSelect 0 -directSelect 0 -isSet 0 -isSetMember 0 -displayMode \"DAG\" -expandObjects 0 -setsIgnoreFilters 1 -containersIgnoreFilters 0 -editAttrName 0 -showAttrValues 0 -highlightSecondary 0 -showUVAttrsOnly 0 -showTextureNodesOnly 0 -attrAlphaOrder \"default\" -animLayerFilterOptions \"allAffecting\" -sortOrder \"none\" -longNames 0 -niceNames 1 -showNamespace 1 -showPinIcons 0 -mapMotionTrails 0 -ignoreHiddenAttribute 0 -ignoreOutlinerColor 0 -renderFilterVisible 0 -renderFilterIndex 0 -selectionOrder \"chronological\" -expandAttribute 0 $editorName"
                                             },
                                             {
                                                 "objectName": "scriptEditorPanel1Window",
@@ -159,7 +124,7 @@
                                                 "closed": false,
                                                 "widthProperty": "free",
                                                 "heightProperty": "free",
-                                                "controlWidth": 575,
+                                                "controlWidth": 733,
                                                 "controlHeight": 743
                                             },
                                             {
@@ -183,7 +148,7 @@
                                 {
                                     "tabWidget": {
                                         "selectedIndex": 0,
-                                        "controlWidth": 1008,
+                                        "controlWidth": 850,
                                         "controlHeight": 760,
                                         "collapsed": false,
                                         "controls": [
@@ -199,10 +164,10 @@
                                                 "closed": false,
                                                 "widthProperty": "free",
                                                 "heightProperty": "free",
-                                                "controlWidth": 1008,
+                                                "controlWidth": 850,
                                                 "controlHeight": 760,
                                                 "initCallback": "mainPaneStateCallback",
-                                                "stateString": "global string $gMainPane; paneLayout -edit -configuration single $gMainPane;if(`modelPanel -exists modelPanel2`){ modelPanel -edit -parent $gMainPane modelPanel2; paneLayout -edit -setPane modelPanel2 1 $gMainPane;}"
+                                                "stateString": "global string $gMainPane; paneLayout -edit -configuration single $gMainPane;if(`modelPanel -exists modelPanel4`){ modelPanel -edit -parent $gMainPane modelPanel4; paneLayout -edit -setPane modelPanel4 1 $gMainPane;}"
                                             }
                                         ]
                                     }
@@ -241,7 +206,7 @@
                                                 "closed": false,
                                                 "widthProperty": "preferred",
                                                 "heightProperty": "free",
-                                                "controlWidth": 469,
+                                                "controlWidth": 461,
                                                 "controlHeight": 760
                                             },
                                             {
@@ -375,62 +340,25 @@
     ],
     "closedControls": [
         {
-            "objectName": "ToolSettings",
-            "posX": 116,
-            "posY": 166,
+            "objectName": "ngSkinToolsMainWindow_dock",
+            "posX": 764,
+            "posY": 326,
             "controlHeight": 758,
-            "controlWidth": 460,
-            "widthProperty": "preferred",
-            "heightProperty": "free"
-        },
-        {
-            "objectName": "hyperGraphPanel1Window",
-            "posX": 1920,
-            "posY": 23,
-            "controlHeight": 1053,
-            "controlWidth": 1916,
-            "widthProperty": "free",
-            "heightProperty": "free",
-            "maximized": 1
-        },
-        {
-            "objectName": "nodeEditorPanel1Window",
-            "posX": 1920,
-            "posY": 23,
-            "controlHeight": 1053,
-            "controlWidth": 1916,
+            "controlWidth": 450,
             "widthProperty": "free",
             "heightProperty": "free"
         },
         {
-            "objectName": "shapePanel1Window",
-            "posX": 200,
-            "posY": 250,
-            "controlHeight": 400,
-            "controlWidth": 660,
+            "objectName": "bifrostBrowserControl",
+            "posX": 250,
+            "posY": 200,
+            "controlHeight": 600,
+            "controlWidth": 1024,
             "widthProperty": "free",
             "heightProperty": "free"
         },
         {
-            "objectName": "renderViewWindow",
-            "posX": 290,
-            "posY": 44,
-            "controlHeight": 1057,
-            "controlWidth": 1236,
-            "widthProperty": "free",
-            "heightProperty": "free"
-        },
-        {
-            "objectName": "polyTexturePlacementPanel1Window",
-            "posX": 2138,
-            "posY": 31,
-            "controlHeight": 1044,
-            "controlWidth": 1197,
-            "widthProperty": "free",
-            "heightProperty": "free"
-        },
-        {
-            "objectName": "componentEditorPanel1Window",
+            "objectName": "bifrostGraphEditorControl",
             "posX": 1920,
             "posY": 23,
             "controlHeight": 1053,
@@ -439,10 +367,10 @@
             "heightProperty": "free"
         },
         {
-            "objectName": "relationshipPanel1Window",
-            "posX": 130,
-            "posY": 31,
-            "controlHeight": 1014,
+            "objectName": "modelPanel5Window",
+            "posX": -615,
+            "posY": 251,
+            "controlHeight": 466,
             "controlWidth": 475,
             "widthProperty": "free",
             "heightProperty": "free"
@@ -457,13 +385,14 @@
             "heightProperty": "free"
         },
         {
-            "objectName": "UVToolkitDockControl",
-            "posX": 230,
-            "posY": 105,
-            "controlHeight": 898,
-            "controlWidth": 285,
-            "widthProperty": "preferred",
-            "heightProperty": "free"
+            "objectName": "profilerPanel1Window",
+            "posX": 0,
+            "posY": 23,
+            "controlHeight": 1023,
+            "controlWidth": 1916,
+            "widthProperty": "free",
+            "heightProperty": "free",
+            "maximized": 1
         },
         {
             "objectName": "hyperGraphPanel2Window",
@@ -471,24 +400,6 @@
             "posY": 23,
             "controlHeight": 1053,
             "controlWidth": 1916,
-            "widthProperty": "free",
-            "heightProperty": "free"
-        },
-        {
-            "objectName": "ArnoldViewportRendererOptions",
-            "posX": 250,
-            "posY": 200,
-            "controlHeight": 68,
-            "controlWidth": 250,
-            "widthProperty": "free",
-            "heightProperty": "free"
-        },
-        {
-            "objectName": "bifrostBrowserControl",
-            "posX": 250,
-            "posY": 200,
-            "controlHeight": 600,
-            "controlWidth": 1024,
             "widthProperty": "free",
             "heightProperty": "free"
         },
@@ -503,38 +414,20 @@
             "maximized": 1
         },
         {
-            "objectName": "ngSkinToolsMainWindow_dock",
-            "posX": 764,
-            "posY": 326,
-            "controlHeight": 758,
-            "controlWidth": 450,
+            "objectName": "renderViewWindow",
+            "posX": 290,
+            "posY": 44,
+            "controlHeight": 1057,
+            "controlWidth": 1236,
             "widthProperty": "free",
             "heightProperty": "free"
         },
         {
-            "objectName": "createNodePanel2Window",
-            "posX": 250,
-            "posY": 200,
-            "controlHeight": 446,
-            "controlWidth": 396,
-            "widthProperty": "free",
-            "heightProperty": "free"
-        },
-        {
-            "objectName": "hyperShadePanel1Window",
-            "posX": 354,
-            "posY": 142,
-            "controlHeight": 721,
-            "controlWidth": 1374,
-            "widthProperty": "free",
-            "heightProperty": "free"
-        },
-        {
-            "objectName": "modelPanel5Window",
-            "posX": -615,
-            "posY": 251,
-            "controlHeight": 466,
-            "controlWidth": 475,
+            "objectName": "componentEditorPanel1Window",
+            "posX": 1920,
+            "posY": 23,
+            "controlHeight": 1053,
+            "controlWidth": 1916,
             "widthProperty": "free",
             "heightProperty": "free"
         },
@@ -548,7 +441,53 @@
             "heightProperty": "free"
         },
         {
-            "objectName": "bifrostGraphEditorControl",
+            "objectName": "UVToolkitDockControl",
+            "posX": 230,
+            "posY": 105,
+            "controlHeight": 898,
+            "controlWidth": 285,
+            "widthProperty": "preferred",
+            "heightProperty": "free"
+        },
+        {
+            "objectName": "hyperGraphPanel1Window",
+            "posX": 1920,
+            "posY": 23,
+            "controlHeight": 1053,
+            "controlWidth": 1916,
+            "widthProperty": "free",
+            "heightProperty": "free",
+            "maximized": 1
+        },
+        {
+            "objectName": "shapePanel1Window",
+            "posX": 200,
+            "posY": 250,
+            "controlHeight": 400,
+            "controlWidth": 660,
+            "widthProperty": "free",
+            "heightProperty": "free"
+        },
+        {
+            "objectName": "posePanel1Window",
+            "posX": -1920,
+            "posY": 23,
+            "controlHeight": 1053,
+            "controlWidth": 1916,
+            "widthProperty": "free",
+            "heightProperty": "free"
+        },
+        {
+            "objectName": "createNodePanel2Window",
+            "posX": 250,
+            "posY": 200,
+            "controlHeight": 446,
+            "controlWidth": 396,
+            "widthProperty": "free",
+            "heightProperty": "free"
+        },
+        {
+            "objectName": "nodeEditorPanel1Window",
             "posX": 1920,
             "posY": 23,
             "controlHeight": 1053,
@@ -557,8 +496,35 @@
             "heightProperty": "free"
         },
         {
-            "objectName": "posePanel1Window",
-            "posX": -1920,
+            "objectName": "ToolSettings",
+            "posX": 1282,
+            "posY": 167,
+            "controlHeight": 758,
+            "controlWidth": 460,
+            "widthProperty": "preferred",
+            "heightProperty": "free"
+        },
+        {
+            "objectName": "ArnoldViewportRendererOptions",
+            "posX": 250,
+            "posY": 200,
+            "controlHeight": 68,
+            "controlWidth": 250,
+            "widthProperty": "free",
+            "heightProperty": "free"
+        },
+        {
+            "objectName": "hyperShadePanel1Window",
+            "posX": 354,
+            "posY": 142,
+            "controlHeight": 721,
+            "controlWidth": 1374,
+            "widthProperty": "free",
+            "heightProperty": "free"
+        },
+        {
+            "objectName": "graphEditor1Window",
+            "posX": 1920,
             "posY": 23,
             "controlHeight": 1053,
             "controlWidth": 1916,
@@ -575,14 +541,22 @@
             "heightProperty": "free"
         },
         {
-            "objectName": "profilerPanel1Window",
-            "posX": 0,
-            "posY": 23,
-            "controlHeight": 1023,
-            "controlWidth": 1916,
+            "objectName": "relationshipPanel1Window",
+            "posX": 130,
+            "posY": 31,
+            "controlHeight": 1014,
+            "controlWidth": 475,
             "widthProperty": "free",
-            "heightProperty": "free",
-            "maximized": 1
+            "heightProperty": "free"
+        },
+        {
+            "objectName": "polyTexturePlacementPanel1Window",
+            "posX": 2138,
+            "posY": 31,
+            "controlHeight": 1044,
+            "controlWidth": 1197,
+            "widthProperty": "free",
+            "heightProperty": "free"
         }
     ],
     "contentBrowserContexts": [
@@ -607,7 +581,7 @@
             "name": "NoContextContentBrowserContext",
             "value": [
                 "examples",
-                "Examples/Modeling/Sculpting Base Meshes/Bipeds"
+                "Examples/Paint Effects/Airbrush"
             ],
             "PanelsStatus": [
                 1,

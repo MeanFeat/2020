@@ -33,7 +33,7 @@ global proc shelf_Custom () {
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "import maya.cmds as cmds\n\n# Close ports if they were already open under another configuration\ntry: cmds.commandPort(name=\":7001\", close=True)\nexcept: cmds.warning('Could not close port 7001 (maybe it is not opened yet...)')\ntry: cmds.commandPort(name=\":7002\", close=True)\nexcept: cmds.warning('Could not close port 7002 (maybe it is not opened yet...)')\n\n# Open new ports\ncmds.commandPort(name=\":7001\", sourceType=\"mel\")\ncmds.commandPort(name=\":7002\", sourceType=\"python\")" 
+        -command "import maya.cmds as cmds\n\n# Close ports if they were already open under another configuration\ntry: cmds.commandPort(name=\":7001\", close=True)\nexcept: cmds.warning('Could not close port 7001 (maybe it is not opened yet...)')\ntry: cmds.commandPort(name=\":7002\", close=True)\nexcept: cmds.warning('Could not close port 7002 (maybe it is not opened yet...)')\n\n# Open new ports\ncmds.commandPort(name=\":7001\", sourceType=\"mel\")\ncmds.commandPort(name=\":7002\", sourceType=\"python\")\n\nimport ptvsd\nptvsd.enable_attach(address = ('0.0.0.0', 3000))" 
         -sourceType "python" 
         -commandRepeatable 1
         -flat 1

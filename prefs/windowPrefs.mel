@@ -37,7 +37,7 @@ windowPref -topLeftCorner 263 1288 -widthHeight 418 120 -maximized false -parent
 windowPref -topLeftCorner 350 640 -widthHeight 616 250 -maximized false -parentMain true fpeReplaceWin;
 windowPref -topLeftCorner 349 307 -widthHeight 450 411 -maximized false -parentMain true FilePathEditor;
 windowPref -topLeftCorner 325 362 -widthHeight 645 280 -maximized false -parentMain true PluginInfoWin;
-windowPref -topLeftCorner 176 457 -widthHeight 520 620 -maximized false -parentMain true connectWindow;
+windowPref -topLeftCorner 0 457 -widthHeight 520 1018 -maximized false -parentMain true connectWindow;
 windowPref -topLeftCorner 133 2017 -widthHeight 1295 861 -maximized false -parentMain true expressionEditorWin;
 windowPref -topLeftCorner 350 640 -widthHeight 381 500 -maximized false -parentMain true RenameAttrWin;
 windowPref -topLeftCorner 286 1227 -widthHeight 390 530 -maximized false -parentMain true setDrivenWnd;
@@ -55,4 +55,7 @@ windowPref -topLeftCorner 350 640 -widthHeight 370 260 -maximized false -parentM
 windowPref -topLeftCorner 159 1332 -widthHeight 420 630 -maximized false -parentMain true cMuscleBuilderWin;
 windowPref -topLeftCorner 183 1157 -widthHeight 420 630 -maximized false -parentMain true cMuscleCreatorWin;
 windowPref -topLeftCorner 356 834 -widthHeight 359 300 -maximized false -parentMain true CreaseSetEditor;
-windowPref -topLeftCorner 100 1200 -widthHeight 302 182 -maximized false -parentMain true TrajectoryGuideWindow;
+windowPref -topLeftCorner 90 1074 -widthHeight 302 182 -maximized false -parentMain true TrajectoryGuideWindow;
+windowPref -topLeftCorner 350 640 -widthHeight 256 75 -maximized false -parentMain true VertSzwnd;
+windowPref -topLeftCorner 350 640 -widthHeight 256 75 -maximized false -parentMain true EdgeSzwnd;
+windowPref -topLeftCorner 350 640 -widthHeight 510 600 -maximized false -parentMain true PaintEffectsBrushWindow;

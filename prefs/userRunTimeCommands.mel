@@ -77,7 +77,7 @@ runTimeCommand
 	-category "Custom Scripts"
 	-hotkeyCtx ""
 	-commandLanguage "python"
-	-command ("import TrajectoryGuide\nfrom TrajectoryGuide import *\ntg_menu()")
+	-command ("import TrajectoryGuide\nreload(TrajectoryGuide)\nfrom TrajectoryGuide import *\ntg_menu()")
 	TrajectoryGuide;
 
 runTimeCommand
@@ -168,6 +168,6 @@ runTimeCommand
 	-category "Custom Scripts"
 	-hotkeyCtx ""
 	-commandLanguage "python"
-	-command ("from UserCommands import KeyRange\nKeyRange()")
+	-command ("import UserCommands\nreload(UserCommands)\nfrom UserCommands import KeyRange\nKeyRange()")
 	KeyRange;
 

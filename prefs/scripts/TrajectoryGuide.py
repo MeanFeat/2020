@@ -113,7 +113,6 @@ def update_constraint_offset():
 
 def tg_menu():
     global t_guide, t_guide_group, owner, pc, motion_trail,  unit_adjust
-    unit_adjust = get_unit_adjust(cmds.currentUnit(query=True, linear=True))
     selection = cmds.ls(selection=True)
     if len(selection) == 0:
         delete_guides()
@@ -121,6 +120,7 @@ def tg_menu():
             if "TrajectoryGuideWindow" in window:
                 cmds.deleteUI(window, window=True)
     else:
+        unit_adjust = get_unit_adjust(cmds.currentUnit(query=True, linear=True)) * 0.1
         owner = selection[0]
         t_guide = cmds.spaceLocator(n="TrajectoryGuide")
         cmds.setKeyframe(t_guide, v=1, at="v")
