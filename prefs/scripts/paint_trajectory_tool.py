@@ -37,9 +37,11 @@ def world_to_screen(test_point, cam):
 
 
 class Point:
-    def __init__(self, w=(0.0, 0, 0.0)):
+    screen_point = (0.0, 0, 0.0)
+
+    def __init__(self, w=(0.0, 0, 0.0), f=0):
         self.world_point = w
-        self.screen_point = (0.0, 0, 0.0)
+        self.feathering = f
 
     def update_screen_point(self, cam):
         self.screen_point = world_to_screen(self.world_point, cam)
@@ -83,6 +85,7 @@ class PaintParams:
             self.inner_radius = 300
 
     def get_feathering(self, dist_sqr):
+        # smooth non-linearity based on tanh
         if dist_sqr < self.inner_radius ** 2:
             return 1
         x = math.sqrt(dist_sqr) - self.inner_radius
@@ -93,7 +96,6 @@ class PaintParams:
         c = math.tanh(b) / 1.75
         result = c + 0.57
         return result
-        # just don't worry about it
 
 
 def get_dist_sqr(x, y):
@@ -101,12 +103,23 @@ def get_dist_sqr(x, y):
     return result
 
 
+def update_feather_mask(brush_location):
+    global brush, motion_trail_points
+    for p in motion_trail_points:
+        result, dist_sqr = p.within_dist(brush_location, camera, brush.radius)
+        if result:
+            p.feathering = brush.get_feathering(dist_sqr)
+        else:
+            p.feathering = 0
+
+
 def press():
     global brush, camera, motion_trail_points
     for p in motion_trail_points:
         p.update_screen_point(camera)
-    # TODO: capture and of feather weights and only operate on initial 'selection'
+
     brush.current_anchor_point = cmds.draggerContext(paint_trajectory_ctx, query=True, anchorPoint=True)
+    update_feather_mask(brush.current_anchor_point)
     brush.last_drag_point = brush.current_anchor_point
     brush.modifier = cmds.draggerContext(paint_trajectory_ctx, query=True, modifier=True)
 
@@ -133,24 +146,15 @@ def drag():
         elif 'shift' in brush.modifier:
             adjust *= -1
 
-        should_update = False
-        new_trail_points = []
         for p in motion_trail_points:
-            result, dist_sqr = p.within_dist(drag_position, camera, brush.radius)
-            if result:
-                should_update = True
-                feathering = brush.get_feathering(dist_sqr) * adjust
-                x = drag_position[0] - brush.last_drag_point[0]
-                y = drag_position[1] - brush.last_drag_point[1]
-                z = drag_position[2] - brush.last_drag_point[2]
-                p = Point((p.world_point[0] + x * feathering, p.world_point[1] + y * feathering,
-                           p.world_point[2] + z * feathering, 1.0))
-                p.update_screen_point(camera)
-            new_trail_points.append(p)
-        if should_update:
-            motion_trail_points = new_trail_points
-            update_actual_trail(motion_trail_points)
-            cmds.refresh()
+            feathering = p.feathering * adjust
+            x = p.world_point[0] + ((drag_position[0] - brush.last_drag_point[0]) * feathering)
+            y = p.world_point[1] + ((drag_position[1] - brush.last_drag_point[1]) * feathering)
+            z = p.world_point[2] + ((drag_position[2] - brush.last_drag_point[2]) * feathering)
+            p.world_point = (x, y, z, 1.0)
+            p.update_screen_point(camera)
+        update_actual_trail(motion_trail_points)
+        cmds.refresh()
 
     if button == 2:
         adjust = 2
@@ -167,18 +171,10 @@ def drag():
     brush.last_drag_point = drag_position
 
 
-def hold():
-    print('hold')
-
-
-def release():
-    return
-
-
 brush = PaintParams()
 camera = CameraParameters()
 cmds.draggerContext(paint_trajectory_ctx, edit=cmds.draggerContext(paint_trajectory_ctx, exists=True),
-                    pressCommand='press()', dragCommand='drag()', releaseCommand='release()', holdCommand='hold()',
+                    pressCommand='press()', dragCommand='drag()',
                     space='world', cursor='crossHair', undoMode="step")
 
 motion_trail_points = []
