@@ -1,8 +1,0 @@
-//Maya Preference 2020 (Release 1)
-//
-//
-evalDeferred("autoLoadPlugin(\"\", \"arcmaya-md5\", \"arcmaya-md5\")");
-evalDeferred("autoLoadPlugin(\"\", \"gameFbxExporter\", \"gameFbxExporter\")");
-evalDeferred("autoLoadPlugin(\"\", \"dx11Shader\", \"dx11Shader\")");
-evalDeferred("autoLoadPlugin(\"\", \"fbxmaya\", \"fbxmaya\")");
-evalDeferred("autoLoadPlugin(\"\", \"modelingToolkit\", \"modelingToolkit\")");

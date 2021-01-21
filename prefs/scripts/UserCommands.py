@@ -13,5 +13,5 @@ def KeyRange(sel=cmds.ls(selection=True)):
     timeRange = cmds.timeControl(playbackSlider, query=True, rangeArray=True)
 
     for i in range(int(timeRange[0]), int(timeRange[1])):
-        cmds.currentTime(i)
+        cmds.currentTime(i, update=False)
         cmds.setKeyframe(sel)

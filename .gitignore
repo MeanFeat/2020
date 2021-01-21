@@ -18,3 +18,13 @@ prefs/scripts/venv/
 prefs/scripts/ptvsd/
 
 prefs/MayaInterfaceScalingConfig
+
+prefs/pluginPrefs.mel
+
+prefs/userPrefs.mel
+
+prefs/userRGBColors2.mel
+
+prefs/windowPrefs.mel
+
+prefs/workspaces/Maya_Classic.json
